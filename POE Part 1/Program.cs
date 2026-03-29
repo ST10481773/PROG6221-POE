@@ -5,6 +5,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        SoundPlayer player = new SoundPlayer(Resources.welcome);
+        player.Play();
         
     }
 }
