@@ -11,8 +11,27 @@ internal class Program
         Console.WriteLine("                                                                               \r\n                                                                               \r\n▄████▄ ▄▄   ▄▄  ▄▄▄  ▄▄▄▄  ▄▄▄▄▄ ▄▄  ▄▄ ▄▄▄▄▄  ▄▄▄▄  ▄▄▄▄   █████▄  ▄▄▄ ▄▄▄▄▄▄ \r\n██▄▄██ ██ ▄ ██ ██▀██ ██▄█▄ ██▄▄  ███▄██ ██▄▄  ███▄▄ ███▄▄   ██▄▄██ ██▀██  ██   \r\n██  ██  ▀█▀█▀  ██▀██ ██ ██ ██▄▄▄ ██ ▀██ ██▄▄▄ ▄▄██▀ ▄▄██▀   ██▄▄█▀ ▀███▀  ██   \r\n                                                                               ");
         Console.Write("Enter your name: ");
         string userName = Console.ReadLine();
-        Console.WriteLine("Hello, " + userName + ", and welcome to the Cybersecurity Awareness Bot. Feel free to ask any questions related to cybersecuriy");
-        string userInput = Console.ReadLine();
+        Console.WriteLine("Hello, " + userName + ", and welcome to the Cybersecurity Awareness Bot. Feel free to ask any questions related to cybersecurity\n");
 
+        
+        bool continueConversation = true;
+        while (continueConversation)
+        {
+            Console.Write("You: ");
+            string userInput = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(userInput))
+            {
+                continue;
+            }
+
+            string response = Bot.GetBotResponse(userInput.ToLower());
+            Console.WriteLine($"Bot: {response}\n");
+
+            if (userInput.ToLower().Contains("bye") || userInput.ToLower().Contains("goodbye") || userInput.ToLower().Contains("exit"))
+            {
+                continueConversation = false;
+            }
+        }
     }
 }
