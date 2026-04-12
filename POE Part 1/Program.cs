@@ -17,7 +17,7 @@ internal class Program
         bool continueConversation = true;
         while (continueConversation)
         {
-            Console.Write("You: ");
+            Visual.DisplayUserPrompt();
             string userInput = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(userInput))
@@ -26,7 +26,7 @@ internal class Program
             }
 
             string response = Bot.GetBotResponse(userInput.ToLower());
-            Console.WriteLine($"Bot: {response}\n");
+            Visual.DisplayBotResponse(response);
 
             if (userInput.ToLower().Contains("bye") || userInput.ToLower().Contains("goodbye") || userInput.ToLower().Contains("exit"))
             {
