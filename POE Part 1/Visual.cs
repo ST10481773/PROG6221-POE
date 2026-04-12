@@ -3,8 +3,6 @@ using System.Threading;
 
 public class Visual
 {
-
-
 	public static void TypeText(string text, int delayMs = 30)
 	{
 		foreach (char c in text)
@@ -15,7 +13,15 @@ public class Visual
 	}
 
     
+	public static void TypeTextLine(string text, int delayMs = 30)
+	{
+		TypeText(text, delayMs);
+		Console.WriteLine();
+	}
 	
+
+    
+
 	
 
 	public static void WriteColored(string text, ConsoleColor color)
@@ -26,13 +32,11 @@ public class Visual
 		Console.ForegroundColor = originalColor;
 	}
 
-	public static void WriteColoredLine(string text, ConsoleColor color)
-	{
-		WriteColored(text + Environment.NewLine, color);
-	}
+	
 
 	public static void DisplayBotResponse(string response, int delayMs = 20)
 	{
+		Console.ForegroundColor = ConsoleColor.White;
 		Console.Write("Bot: ");
 		ConsoleColor originalColor = Console.ForegroundColor;
 		Console.ForegroundColor = ConsoleColor.Cyan;
@@ -43,8 +47,10 @@ public class Visual
 
 	public static void DisplayUserPrompt()
 	{
-		WriteColored("You: ", ConsoleColor.Green);
-	}
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write("You: ");
+		ConsoleColor originalColor = Console.ForegroundColor;
+		Console.ForegroundColor = ConsoleColor.DarkYellow;
+    }
 
-	
 }
