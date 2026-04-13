@@ -18,3 +18,10 @@ Requirements:
 - NET 9.0
 
 Clone the repository, then open the .slnx folder in Visual Studio, and use the 'Build Solution' option.
+
+## CI Workflows
+<p align="center">
+    <picture>
+      <img src="ci-workflow-success.png" />
+  </picture>
+</p>
