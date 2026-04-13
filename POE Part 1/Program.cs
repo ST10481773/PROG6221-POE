@@ -11,7 +11,7 @@ internal class Program
         Console.WriteLine("                                                                               \r\n                                                                               \r\n▄████▄ ▄▄   ▄▄  ▄▄▄  ▄▄▄▄  ▄▄▄▄▄ ▄▄  ▄▄ ▄▄▄▄▄  ▄▄▄▄  ▄▄▄▄   █████▄  ▄▄▄ ▄▄▄▄▄▄ \r\n██▄▄██ ██ ▄ ██ ██▀██ ██▄█▄ ██▄▄  ███▄██ ██▄▄  ███▄▄ ███▄▄   ██▄▄██ ██▀██  ██   \r\n██  ██  ▀█▀█▀  ██▀██ ██ ██ ██▄▄▄ ██ ▀██ ██▄▄▄ ▄▄██▀ ▄▄██▀   ██▄▄█▀ ▀███▀  ██   \r\n                                                                               ");
         Console.Write("Enter your name: ");
         string userName = Console.ReadLine();
-        Console.WriteLine("Hello, " + userName + ", and welcome to the Cybersecurity Awareness Bot. Feel free to ask any questions related to cybersecurity\n");
+        Visual.TypeTextLine("Hello, " + userName + ", and welcome to the Cybersecurity Awareness Bot. Feel free to ask any questions related to cybersecurity\n");
 
         
         bool continueConversation = true;
